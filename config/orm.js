@@ -1,4 +1,4 @@
-// Import MySQL connection.
+
 var connection = require("../config/connection.js");
 
 // Object for all our SQL statement functions.
@@ -17,7 +17,6 @@ var orm = {
     connection.query('INSERT INTO burgers SET ?', {
       burger_name: burger_name,
       devoured: false
-      // date: timestamp
     }, function (err, result) {
       if (err) throw err;
       callback(result);

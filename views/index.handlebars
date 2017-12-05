@@ -1,24 +1,34 @@
-<h2>Order Up</h2>
-<div id="ready_to_eat">
-  <!-- Dynamically Insert Ready Burgers Here -->
-  {{#each burgers}}
-    {{#unless devoured}}
-    <form action="burger/eat/{{id}}" method="POST">
-        <li>{{id}}. {{burger_name}}</li>
-        <button type="submit">Eat My Burger</button>
-    </form>
-    {{/unless}}
-  {{/each}}
+<div class="columns">
+
+  <div class="column">
+    <h2>Order Up</h2>
+    <div id="ready_to_eat">
+      <!-- Dynamically Insert Ready Burgers Here -->
+      {{#each burgers}}
+        {{#unless devoured}}
+        <form action="burger/subtract/{{id}}" method="POST">
+            <li>{{id}}. {{burger_name}}</li>
+            <button class="button" type="submit">Eat</button>
+        </form>
+        {{/unless}}
+      {{/each}}
+    </div>
+  </div>
+
+  <div class="column">
+    <h2>Devoured</h2>
+    <div id="already_eaten">
+      <!-- Dynamically Insert Eaten Burgers Here -->
+      {{#each burgers}}
+        {{#if this.devoured}}
+          <li>{{this.id}}. {{this.burger_name}}</li><br>
+        {{/if}}
+      {{/each}}
+    </div>
+  </div>
+
 </div>
 
-<h2>Devoured</h2>
-<div id="already_eaten">
-  <!-- Dynamically Insert Eaten Burgers Here -->
-  {{#each burgers}}
-    {{#if this.devoured}}
-      <li>{{this.id}}. {{this.burger_name}}</li>
-    {{/if}}
-  {{/each}}
-</div>
+
 
 

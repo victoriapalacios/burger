@@ -1,15 +1,78 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Eat da Burger!</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Burger Shack</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
   </head>
+  <style>
+    body {
+      padding: 20px 20px 100px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    li {
+      list-style-type: none;
+      display: inline;
+    }
+
+    h1, h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 30px;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 4px;
+    }
+
+    h2 {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    .button {
+      border: none;
+      text-transform: uppercase;
+      font-weight: 900;
+      padding: 3px 10px;
+      margin: -5px 0;
+      color: #FFA500;
+    }
+
+    .place-order {
+      margin-top: 50px;
+    }
+
+    textarea {
+      width: 300px;
+      border: none;
+      border-bottom: 3px solid #4a4a4a;
+      resize: none;
+    }
+    .add {
+      text-align: center;
+    }
+
+    img {
+      width: 100px;
+      margin: 0 auto;
+      display: block;
+      padding-bottom: 10px;
+    }
+  </style>
   <body>
-    <h1>Eat da Burger!</h1>
+    <img src="https://s18.postimg.org/ivrvxosux/tumblr_n49iug_AWwu1sial0xo1_500.gif" alt="">
+    <h1>Burger Shack</h1>
     {{{body}}}
-    <form action="burger/create" method="POST">
-      <label>Place Your Order</label>
-      <textarea id="new_burger" name="burger_name"></textarea>
-      <button id="submit-button" type="submit">Place Order</button>
+    <form action="burger/add" method="POST">
+      <h2 class="place-order">Place Your Order</h2>
+      <div class="add">
+        <textarea id="new_burger" name="burger_name"></textarea>
+        <button id="submit-button" type="submit" class="button">Place Order</button>
+      </div>
     </form>
   </body>
 </html>
